@@ -1,0 +1,87 @@
+/* index.css - Updated with brand colors */
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  --color-primary-50: #e6f0ed;
+  --color-primary-100: #cce1db;
+  --color-primary-200: #99c3b7;
+  --color-primary-300: #66a493;
+  --color-primary-400: #33866f;
+  --color-primary-500: #062b23;
+  --color-primary-600: #05221c;
+  --color-primary-700: #041a15;
+  --color-primary-800: #02110e;
+  --color-primary-900: #010907;
+  
+  --color-cream-50: #fff8e6;
+  --color-cream-100: #fff2cc;
+  --color-cream-200: #ffe599;
+  --color-cream-300: #ffe098;
+  --color-cream-400: #ffd966;
+  --color-cream-500: #ffd33c;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-gray-50 via-white to-cream-300/30 text-gray-800 font-sans antialiased;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-[#062b23] to-[#041a15] rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply from-[#041a15] to-[#02110e];
+  }
+}
+
+@layer components {
+  .glass-nav {
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(6, 43, 35, 0.1);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #062b23 0%, #0a4a3d 40%, #ffe098 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .card-shadow {
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(6, 43, 35, 0.05);
+  }
+  
+  .card-shadow-hover {
+    box-shadow: 0 25px 40px -12px rgba(6, 43, 35, 0.15), 0 0 0 1px rgba(6, 43, 35, 0.1);
+  }
+  
+  .btn-primary {
+    @apply bg-[#062b23] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-[#062b23]/25 hover:scale-105 active:scale-95 hover:bg-[#ffe098] hover:text-[#062b23];
+  }
+  
+  .btn-outline {
+    @apply border-2 border-[#062b23] text-[#062b23] px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-[#ffe098] hover:border-[#ffe098] hover:shadow-lg hover:text-[#062b23];
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#062b23] focus:ring-2 focus:ring-[#062b23]/20 transition-all duration-300 outline-none bg-white/80;
+  }
+}
