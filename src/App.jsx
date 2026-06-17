@@ -18,6 +18,7 @@ const Apartments = lazy(() => import("./pages/Apartments"));
 const Plots = lazy(() => import("./pages/Plots"));
 const Rentals = lazy(() => import("./pages/Rentals"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Videos = lazy(() => import("./pages/Videos"));
 
 const PropertyDetail = lazy(() => import("./pages/PropertyDetail"));
 
@@ -38,7 +39,7 @@ function App() {
             <Route path="/plots" element={<Plots />} />
             <Route path="/rentals" element={<Rentals />} />
             <Route path="/contact" element={<Contact />} />
-          
+            <Route path="/videos" element={<Videos />} />
             <Route path="/property/:id" element={<PropertyDetail />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
