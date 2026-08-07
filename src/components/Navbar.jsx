@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X, Home, Building2, Phone, Info, LogIn, Users } from 'lucide-react';
 import { CgGirl } from 'react-icons/cg';
-
 import logo from '../assets/logo 1.png';
 
 const Navbar = () => {
@@ -50,6 +49,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
+            <Link to="/" className="relative group">
               <div className="flex items-center gap-3">
                 <motion.div
                   whileHover={{ rotate: 5, scale: 1.05 }}
@@ -64,12 +64,10 @@ const Navbar = () => {
                   <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#ffe098] rounded-full animate-pulse"></div>
                 </motion.div>
               </div>
-
               <div className="absolute -inset-2 bg-[#062b23]/0 rounded-2xl transition-all duration-500 group-hover:bg-[#062b23]/5 -z-10"></div>
             </Link>
 
             {/* Desktop Navigation */}
-
             <div className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
                 <Link
@@ -93,8 +91,7 @@ const Navbar = () => {
                 </Link>
               ))}
 
-              {/* Properties */}
-
+              {/* Properties Dropdown */}
               <div className="relative group">
                 <button
                   className={`flex items-center gap-2 font-medium transition-colors duration-300 ${
@@ -143,17 +140,85 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Mobile Button */}
-
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
       </motion.nav>
+
+      {/* Mobile Drawer Menu */}
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          className="fixed inset-0 z-40 bg-white/98 backdrop-blur-lg pt-20 px-4 lg:hidden flex flex-col justify-between pb-8"
+        >
+          <div className="flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
+                  location.pathname === link.path
+                    ? "bg-[#ffe098] text-[#062b23] font-bold"
+                    : "text-gray-700 hover:bg-gray-50"
+                }`}
+              >
+                {link.icon}
+                <span className="font-medium">{link.name}</span>
+              </Link>
+            ))}
+            <Link
+              to="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
+                location.pathname === "/contact"
+                  ? "bg-[#ffe098] text-[#062b23] font-bold"
+                  : "text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              <Phone size={18} />
+              <span className="font-medium">Contact</span>
+            </Link>
+
+            <div className="border-t border-gray-200 pt-4">
+              <p className="px-4 text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider">
+                Properties Categories
+              </p>
+              {propertiesDropdown.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-4 py-2 rounded-lg text-sm transition-all ${
+                    location.pathname === item.path
+                      ? "text-[#062b23] bg-[#ffe098] font-bold"
+                      : "text-gray-600 hover:bg-gray-50"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <Link
+            to="/login"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="flex items-center justify-center gap-2 mx-4 px-5 py-3.5 bg-[#062b23] text-[#ffe098] rounded-full font-bold shadow-lg hover:bg-[#0a4a3d] transition-all"
+          >
+            <LogIn size={18} />
+            Login to CRM
+          </Link>
+        </motion.div>
+      )}
     </>
   );
 };
