@@ -75,14 +75,14 @@ const Dashboard = () => {
       link: "/crm/clients",
     },
     {
-      title: "Total Leads",
-      value: totalLeads,
-      subtitle: `${newLeadsCount} New Unassigned Leads`,
-      icon: Target,
+      title: "Total Clients",
+      value: totalClients,
+      subtitle: `${totalClients} Registered Clients`,
+      icon: Users,
       bgColor: "bg-amber-500",
       textColor: "text-amber-500",
       lightBg: "bg-amber-50",
-      link: "/crm/leads",
+      link: "/crm/clients",
     },
     {
       title: "Today's Inquiries",
@@ -126,7 +126,7 @@ const Dashboard = () => {
           </span>
           <h1 className="text-3xl font-extrabold mb-2">Welcome to Mohal Landholdings CRM</h1>
           <p className="text-gray-200 text-sm leading-relaxed">
-            Monitor real-time property performance, manage lead inquiries, client portfolios, and track monthly sales metrics.
+            Monitor real-time property performance, client portfolios, inquiry messages, and track monthly sales metrics.
           </p>
         </div>
 
@@ -138,10 +138,10 @@ const Dashboard = () => {
             <Plus size={16} /> Add Property
           </Link>
           <Link
-            to="/crm/leads"
+            to="/crm/messages"
             className="px-5 py-3 bg-white/10 text-white rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-white/20 transition-all border border-white/20 flex items-center gap-2"
           >
-            <Target size={16} /> View Leads
+            <MessageSquare size={16} /> View Messages
           </Link>
         </div>
 
