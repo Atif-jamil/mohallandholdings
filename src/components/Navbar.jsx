@@ -48,27 +48,24 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-3 sm:px-4 md:px-6">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo - Vertically centered, fitted neatly within navbar height with crisp readable text */}
-            <Link to="/" className="relative group flex-shrink-0 flex items-center">
-              <div className="flex items-center py-1">
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="relative flex items-center justify-center bg-white rounded-xl p-1 shadow-sm border border-[#ffe098]/40 overflow-hidden"
-                >
-                  <img
-                    src={logo}
-                    alt="MOHAL LAND HOLDINGS"
-                    className="h-12 sm:h-14 md:h-16 w-auto max-h-16 object-contain object-center scale-105 transform"
-                  />
-                  <div className="absolute top-1 right-1 w-2.5 h-2.5 bg-[#ffe098] rounded-full animate-pulse"></div>
-                </motion.div>
-              </div>
-              <div className="absolute -inset-1 bg-[#062b23]/0 rounded-xl transition-all duration-500 group-hover:bg-[#062b23]/5 -z-10"></div>
+          <div className="flex items-center justify-between h-20 md:h-24">
+            {/* New Mohal Landholdings Logo - 30% Larger, Vertically Centered & 100% Readable */}
+            <Link to="/" className="relative group flex-shrink-0 flex items-center my-auto">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="relative flex items-center justify-center bg-[#062b23] rounded-2xl p-2 shadow-lg border border-[#ffe098]/40 overflow-hidden"
+              >
+                <img
+                  src={logo}
+                  alt="MOHAL LANDHOLDINGS"
+                  className="h-12 sm:h-14 md:h-18 lg:h-20 w-auto max-h-20 object-contain object-center"
+                />
+                <div className="absolute top-1 right-1 w-2.5 h-2.5 bg-[#ffe098] rounded-full animate-pulse"></div>
+              </motion.div>
             </Link>
 
-            {/* Desktop Navigation - Shifted slightly left with balanced spacing */}
+            {/* Desktop Navigation - Balanced Spacing */}
             <div className="hidden lg:flex items-center gap-6 xl:gap-8">
               {navLinks.map((link) => (
                 <Link
@@ -153,7 +150,7 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Mobile Drawer Menu - Completely Responsive */}
+      {/* Mobile Drawer Menu */}
       {isMobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, x: -100 }}
@@ -213,7 +210,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Fully Responsive Mobile Login Button */}
           <div className="pt-6 border-t border-gray-100 mt-4">
             <Link
               to="/login"

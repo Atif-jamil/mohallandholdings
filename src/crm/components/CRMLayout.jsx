@@ -67,8 +67,8 @@ const CRMLayout = () => {
         {/* Sidebar Header - High quality prominent logo */}
         <div className="p-6 border-b border-white/10 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="p-3 bg-white rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-300">
-              <img src={logo} alt="Mohal Landholdings Logo" className="h-10 md:h-12 w-auto object-contain" />
+            <div className="p-2.5 bg-[#062b23] rounded-2xl border border-[#ffe098]/40 shadow-xl group-hover:scale-105 transition-transform duration-300">
+              <img src={logo} alt="MOHAL LANDHOLDINGS Logo" className="h-12 md:h-14 w-auto object-contain" />
             </div>
           </Link>
         </div>
@@ -180,8 +180,8 @@ const CRMLayout = () => {
           <div className="lg:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm flex">
             <div className="w-72 bg-[#062b23] text-white flex flex-col h-full shadow-2xl">
               <div className="p-6 border-b border-white/10 flex items-center justify-between">
-                <div className="p-2 bg-white rounded-xl">
-                  <img src={logo} alt="Logo" className="h-8 w-auto object-contain" />
+                <div className="p-2 bg-[#062b23] rounded-xl border border-[#ffe098]/40 shadow-md">
+                  <img src={logo} alt="MOHAL LANDHOLDINGS" className="h-10 w-auto object-contain" />
                 </div>
                 <button
                   onClick={() => setMobileSidebarOpen(false)}

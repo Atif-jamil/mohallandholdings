@@ -1,9 +1,9 @@
-/* Footer.jsx - Updated with brand colors and new contact details */
+/* Footer.jsx - Updated with brand logo and contact details */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Youtube, Clock } from 'lucide-react'
 import { FaTiktok } from 'react-icons/fa';
+import logo from '../assets/logo 1.png';
 
 const Footer = () => {
   const quickLinks = [
@@ -44,15 +44,11 @@ const Footer = () => {
       
       <div className="relative z-10 container mx-auto px-4 md:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Company Info */}
+          {/* Company Info - Render new Mohal Landholdings logo */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-12 h-12 bg-[#ffe098] rounded-xl flex items-center justify-center shadow-xl">
-                <span className="font-bold text-2xl text-[#062b23]">M</span>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold tracking-wide text-white">
-                 <p> MOHAL LANDHOLDINGS</p></h3>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2.5 bg-[#062b23] rounded-2xl border border-[#ffe098]/40 shadow-xl inline-block">
+                <img src={logo} alt="MOHAL LANDHOLDINGS" className="h-14 w-auto object-contain" />
               </div>
             </div>
             <div className="mt-4">
@@ -107,7 +103,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info - Updated */}
+          {/* Contact Info */}
           <div>
             <h4 className="font-semibold text-lg mb-4 text-[#ffe098]">Contact Us</h4>
             <div className="space-y-3">
@@ -118,7 +114,7 @@ const Footer = () => {
                     href="https://maps.google.com/?cid=3489486187623201114" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-gray-300 text-sm hover:text-[#ffe098] transition-colors block"
+                    className="text-gray-300 text-sm hover:text-[#ffe098] transition-colors block font-semibold"
                   >
                     MOHAL LANDHOLDINGS
                   </a>
@@ -128,10 +124,10 @@ const Footer = () => {
               <div className="flex items-center gap-3 group">
                 <Phone size={18} className="text-[#ffe098] group-hover:scale-110 transition-transform" />
                 <div>
-                  <a href="tel:+923311111730" className="text-gray-300 hover:text-[#ffe098] transition-colors block">
+                  <a href="tel:+923311111730" className="text-gray-300 hover:text-[#ffe098] transition-colors block font-semibold">
                     +92 331 1111730
                   </a>
-                  <p className="text-gray-400 text-xs mt-1">contact</p>
+                  <p className="text-gray-400 text-xs mt-1">Contact Phone</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 group">

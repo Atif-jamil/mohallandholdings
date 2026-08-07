@@ -55,10 +55,10 @@ const Login = () => {
       >
         {/* Company Logo - Prominent, Crisp White Background Card for Perfect Contrast */}
         <div className="text-center mb-8">
-          <div className="inline-block p-4 sm:p-5 rounded-2xl bg-white shadow-xl border border-[#ffe098]/40 mb-6 hover:scale-105 transition-transform duration-300">
+          <div className="inline-block p-4 sm:p-5 rounded-3xl bg-[#062b23] shadow-2xl border border-[#ffe098]/40 mb-6 hover:scale-105 transition-transform duration-300">
             <img
               src={logo}
-              alt="Mohal Landholdings Logo"
+              alt="MOHAL LANDHOLDINGS"
               className="h-20 sm:h-24 md:h-28 w-auto object-contain mx-auto"
             />
           </div>
