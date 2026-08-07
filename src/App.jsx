@@ -35,6 +35,7 @@ const Houses = lazy(() => import("./pages/Houses"));
 const Apartments = lazy(() => import("./pages/Apartments"));
 const Plots = lazy(() => import("./pages/Plots"));
 const Rentals = lazy(() => import("./pages/Rentals"));
+const Contact = lazy(() => import("./pages/Contact"));
 const Videos = lazy(() => import("./pages/Videos"));
 const PropertyDetail = lazy(() => import("./pages/PropertyDetail"));
 
