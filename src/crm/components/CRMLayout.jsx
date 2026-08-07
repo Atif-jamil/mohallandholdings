@@ -6,7 +6,6 @@ import {
   Building2,
   Users,
   UserCheck,
-  Target,
   MessageSquare,
   Calendar,
   Quote,
@@ -37,12 +36,12 @@ const CRMLayout = () => {
     navigate("/login");
   };
 
+  // Pipeline module completely removed as requested
   const navItems = [
     { label: "Dashboard", path: "/crm/dashboard", icon: LayoutDashboard, perm: null, superOnly: false },
     { label: "Properties", path: "/crm/properties", icon: Building2, perm: "properties", superOnly: false },
     { label: "Clients", path: "/crm/clients", icon: Users, perm: "clients", superOnly: false },
     { label: "Consultants", path: "/crm/consultants", icon: UserCheck, perm: "consultants", superOnly: false },
-    { label: "Leads Pipeline", path: "/crm/leads", icon: Target, perm: "leads", superOnly: false },
     { label: "Messages", path: "/crm/messages", icon: MessageSquare, perm: "messages", superOnly: false },
     { label: "Appointments", path: "/crm/appointments", icon: Calendar, perm: "appointments", superOnly: false },
     { label: "Testimonials", path: "/crm/testimonials", icon: Quote, perm: "testimonials", superOnly: false },
@@ -62,9 +61,9 @@ const CRMLayout = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col lg:flex-row font-sans antialiased text-gray-800">
-      {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex flex-col w-72 bg-[#062b23] text-white flex-shrink-0 min-h-screen shadow-2xl relative z-30">
+    <div className="min-h-screen bg-gray-100 flex font-sans antialiased text-gray-800 relative">
+      {/* Fixed Desktop Sidebar (stuck to viewport left) */}
+      <aside className="hidden lg:flex flex-col w-72 bg-[#062b23] text-white flex-shrink-0 h-screen sticky top-0 shadow-2xl z-30">
         {/* Sidebar Header - High quality prominent logo */}
         <div className="p-6 border-b border-white/10 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
@@ -87,8 +86,8 @@ const CRMLayout = () => {
           </div>
         </div>
 
-        {/* Navigation Menu */}
-        <nav className="flex-1 px-4 space-y-1.5 overflow-y-auto pb-6">
+        {/* Navigation Menu (Independently Scrollable) */}
+        <nav className="flex-1 px-4 space-y-1.5 overflow-y-auto pb-6 custom-scrollbar">
           <div className="px-3 py-2 text-[10px] font-extrabold uppercase tracking-wider text-[#ffe098]/70">
             Navigation Menu
           </div>
@@ -113,7 +112,7 @@ const CRMLayout = () => {
         </nav>
 
         {/* Sidebar Footer */}
-        <div className="p-4 border-t border-white/10 space-y-2">
+        <div className="p-4 border-t border-white/10 space-y-2 bg-[#062b23]">
           <Link
             to="/"
             target="_blank"
@@ -130,9 +129,9 @@ const CRMLayout = () => {
         </div>
       </aside>
 
-      {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-w-0 min-h-screen">
-        {/* Top Header Bar */}
+      {/* Main Right Content Area (Scrolls independently) */}
+      <div className="flex-1 flex flex-col min-w-0 min-h-screen overflow-y-auto">
+        {/* Top Sticky Header Bar */}
         <header className="h-20 bg-white border-b border-gray-200 px-4 md:px-8 flex items-center justify-between sticky top-0 z-20 shadow-sm">
           <div className="flex items-center gap-4">
             <button

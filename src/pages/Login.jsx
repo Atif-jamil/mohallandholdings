@@ -53,13 +53,13 @@ const Login = () => {
         transition={{ duration: 0.5 }}
         className="max-w-md w-full bg-white/95 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 shadow-2xl border border-white/20 relative z-10"
       >
-        {/* Company Logo - Prominent & High Resolution */}
+        {/* Company Logo - Prominent, Crisp White Background Card for Perfect Contrast */}
         <div className="text-center mb-8">
-          <div className="inline-block p-4 rounded-2xl bg-[#062b23] shadow-lg mb-6 hover:scale-105 transition-transform duration-300">
+          <div className="inline-block p-4 sm:p-5 rounded-2xl bg-white shadow-xl border border-[#ffe098]/40 mb-6 hover:scale-105 transition-transform duration-300">
             <img
               src={logo}
               alt="Mohal Landholdings Logo"
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain mx-auto"
+              className="h-20 sm:h-24 md:h-28 w-auto object-contain mx-auto"
             />
           </div>
           <h2 className="text-3xl font-extrabold text-[#062b23] tracking-tight">Welcome Back</h2>
@@ -185,9 +185,9 @@ const Login = () => {
             >
               <svg className="w-4 h-4" viewBox="0 0 23 23">
                 <path fill="#f35325" d="M1 1h10v10H1z" />
-                <path fill="#81bc06" d="M12 1h10v10H12z" />
+                <path fill="#81bc06" d="M12 1h10v10H1z" />
                 <path fill="#05a6f0" d="M1 12h10v10H1z" />
-                <path fill="#ffba08" d="M12 12h10v10H12z" />
+                <path fill="#ffba08" d="M12 12h10v10H1z" />
               </svg>
               Microsoft
             </button>

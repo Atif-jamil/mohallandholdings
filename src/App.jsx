@@ -103,14 +103,6 @@ function AppContent() {
                 }
               />
               <Route
-                path="leads"
-                element={
-                  <ProtectedRoute requiredPermission="leads">
-                    <LeadsManagement />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
                 path="messages"
                 element={
                   <ProtectedRoute requiredPermission="messages">
