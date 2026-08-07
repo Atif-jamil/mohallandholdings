@@ -8,7 +8,10 @@ import {
 } from 'lucide-react'
 import { propertiesData } from '../data/propertiesData'
 
+import { useCRM } from '../context/CRMContext'
+
 const PropertyDetail = () => {
+  const { submitLeadFromWebsite, submitAppointment } = useCRM()
   const { id } = useParams()
   const navigate = useNavigate()
   const [property, setProperty] = useState(null)
@@ -50,27 +53,34 @@ const PropertyDetail = () => {
   }
 
   const handleSendEmail = () => {
-    // Open email popup modal instead of directly opening email client
     setShowEmailPopup(true)
   }
 
   const handleEmailSubmit = (e) => {
     e.preventDefault()
-    
-    // Create email content
-    const subject = `Property Inquiry: ${property.title} - ${property.location}`
-    const body = `Name: ${emailForm.name}%0AEmail: ${emailForm.email}%0APhone: ${emailForm.phone}%0A%0AMessage:%0A${emailForm.message}%0A%0AProperty Details:%0A- Title: ${property.title}%0A- Location: ${property.location}%0A- Price: $${property.price.toLocaleString()}${property.type === 'Rental' ? '/month' : ''}%0A- Type: ${property.type}%0A- Bedrooms: ${property.bedrooms}%0A- Bathrooms: ${property.bathrooms}`
-    
-    // Open default email client
-    window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    
-    // Close popup
+
+    // Register Lead & Appointment in CRM Context
+    submitLeadFromWebsite({
+      name: emailForm.name,
+      email: emailForm.email,
+      phone: emailForm.phone,
+      propertyInterest: property.title,
+      source: "Property Detail Page",
+      message: emailForm.message,
+    })
+
+    submitAppointment({
+      clientName: emailForm.name,
+      phone: emailForm.phone,
+      email: emailForm.email,
+      propertyTitle: property.title,
+      date: new Date().toISOString().split("T")[0],
+      time: "14:00",
+      notes: emailForm.message,
+    })
+
     setShowEmailPopup(false)
-    
-    // Show success message
-    alert('Opening your email client...')
-    
-    // Reset form
+    alert('Thank you! Your property inquiry and site tour request have been received.')
     setEmailForm({ name: '', email: '', phone: '', message: '' })
   }
 

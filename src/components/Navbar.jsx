@@ -50,20 +50,20 @@ const Navbar = () => {
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="relative group">
-              <motion.div
-                whileHover={{ rotate: 5, scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-                className="relative"
-              >
-                <img
-                  src={logo}
-                  alt="MOHAL LAND HOLDINGS Logo"
-                  className="w-70 h-70 object-contain rounded-xl"
-                />
-
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#ffe098] rounded-full animate-pulse"></div>
-              </motion.div>
+              <div className="flex items-center gap-3">
+                <motion.div
+                  whileHover={{ rotate: 5, scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="relative"
+                >
+                  <img
+                    src={logo}
+                    alt="MOHAL LAND HOLDINGS Logo"
+                    className="h-14 sm:h-16 md:h-20 w-auto object-contain rounded-xl shadow-sm p-1 bg-white"
+                  />
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#ffe098] rounded-full animate-pulse"></div>
+                </motion.div>
+              </div>
 
               <div className="absolute -inset-2 bg-[#062b23]/0 rounded-2xl transition-all duration-500 group-hover:bg-[#062b23]/5 -z-10"></div>
             </Link>
@@ -122,8 +122,7 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Contact after Properties */}
-
+              {/* Contact */}
               <Link
                 to="/contact"
                 className={`flex items-center gap-2 font-medium transition-all duration-300 hover:text-[#062b23] relative group ${
@@ -132,6 +131,15 @@ const Navbar = () => {
               >
                 <Phone size={18} />
                 Contact
+              </Link>
+
+              {/* Desktop Login Button */}
+              <Link
+                to="/login"
+                className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#062b23] to-[#0a4a3d] text-white rounded-full font-semibold text-sm shadow-md hover:shadow-xl hover:from-[#0a4a3d] hover:to-[#ffe098] hover:text-[#062b23] transition-all duration-300 transform hover:-translate-y-0.5 border border-[#ffe098]/30"
+              >
+                <LogIn size={18} />
+                Login
               </Link>
             </div>
 

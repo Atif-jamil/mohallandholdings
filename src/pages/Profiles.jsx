@@ -1,8 +1,8 @@
 /* pages/Profiles.jsx */
 import React from 'react'
 import { motion } from 'framer-motion'
-import { User } from 'lucide-react'
 import ceoImage from '../assets/ceo.jpeg'
+import { UserRound, UserCheck, ShieldCheck, Award, Briefcase, Video } from 'lucide-react'
 
 const Profiles = () => {
   const consultants = [
@@ -10,41 +10,25 @@ const Profiles = () => {
       name: 'Shahzad Ahmad',
       role: 'Real Estate Consultant',
       description: 'Experienced real estate consultant helping clients with property guidance, investment planning, and market opportunities.',
-    },
-    {
-      name: 'Dawar Ali',
-      role: 'Real Estate Consultant',
-      description: 'Experienced real estate consultant helping clients with property guidance, investment planning, and market opportunities.',
-    },
-    {
-      name: 'Warasat Ali',
-      role: 'Real Estate Consultant',
-      description: 'Experienced real estate consultant helping clients with property guidance, investment planning, and market opportunities.',
-    },
-    {
-      name: 'Arman Bhuller',
-      role: 'Real Estate Consultant',
-      description: 'Experienced real estate consultant helping clients with property guidance, investment planning, and market opportunities.',
+      icon: UserRound
     },
     {
       name: 'Malik Raheel',
       role: 'Real Estate Consultant',
       description: 'Experienced real estate consultant helping clients with property guidance, investment planning, and market opportunities.',
+      icon: UserCheck
     },
     {
       name: 'Danish Khan',
       role: 'Real Estate Consultant',
       description: 'Experienced real estate consultant helping clients with property guidance, investment planning, and market opportunities.',
-    },
-    {
-      name: 'Omer Javed',
-      role: 'Real Estate Consultant',
-      description: 'Experienced real estate consultant helping clients with property guidance, investment planning, and market opportunities.',
+      icon: ShieldCheck
     },
     {
       name: 'Tanveer',
       role: 'Real Estate Consultant',
       description: 'Experienced real estate consultant helping clients with property guidance, investment planning, and market opportunities.',
+      icon: Award
     }
   ]
 
@@ -183,8 +167,8 @@ const Profiles = () => {
               <div className="bg-gradient-to-br from-[#062b23] to-[#0a4a3d] p-8 text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M0%200h20v20H0V0zm20%2020h20v20H20V20z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-20"></div>
                 <div className="relative z-10">
-                  <div className="w-28 h-28 bg-white/15 rounded-full flex items-center justify-center mx-auto backdrop-blur-sm border-3 border-white/30 group-hover:scale-110 transition-transform duration-300">
-                    <User size={48} className="text-[#ffe098]" />
+                  <div className="w-28 h-28 rounded-full bg-[#ffe098] flex items-center justify-center mx-auto border-3 border-white/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Briefcase className="w-14 h-14 text-[#062b23]" />
                   </div>
                 </div>
               </div>
@@ -209,8 +193,8 @@ const Profiles = () => {
               <div className="bg-gradient-to-br from-[#062b23] to-[#0a4a3d] p-8 text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M0%200h20v20H0V0zm20%2020h20v20H20V20z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-20"></div>
                 <div className="relative z-10">
-                  <div className="w-28 h-28 bg-white/15 rounded-full flex items-center justify-center mx-auto backdrop-blur-sm border-3 border-white/30 group-hover:scale-110 transition-transform duration-300">
-                    <User size={48} className="text-[#ffe098]" />
+                  <div className="w-28 h-28 rounded-full bg-[#ffe098] flex items-center justify-center mx-auto border-3 border-white/30 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Video className="w-14 h-14 text-[#062b23]" />
                   </div>
                 </div>
               </div>
@@ -245,7 +229,7 @@ const Profiles = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {consultants.map((consultant, index) => (
               <motion.div
                 key={index}
@@ -259,8 +243,8 @@ const Profiles = () => {
                 <div className="bg-gradient-to-br from-[#062b23] to-[#0a4a3d] p-6 text-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M0%200h20v20H0V0zm20%2020h20v20H20V20z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-20"></div>
                   <div className="relative z-10">
-                    <div className="w-20 h-20 bg-white/15 rounded-full flex items-center justify-center mx-auto backdrop-blur-sm border-2 border-white/30 group-hover:scale-110 transition-transform duration-300">
-                      <User size={32} className="text-[#ffe098]" />
+                    <div className="w-20 h-20 bg-[#ffe098] rounded-full flex items-center justify-center mx-auto border-2 border-white/30 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                      <consultant.icon className="w-10 h-10 text-[#062b23]" />
                     </div>
                   </div>
                 </div>

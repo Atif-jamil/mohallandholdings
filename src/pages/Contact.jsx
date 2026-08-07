@@ -1,28 +1,33 @@
-/* Contact.jsx - Updated with new contact details and brand colors */
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle, CheckCircle2 } from "lucide-react";
+import { useCRM } from "../context/CRMContext";
 
 const Contact = () => {
+  const { submitLeadFromWebsite, cms } = useCRM();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
-  const [formStatus, setFormStatus] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const subject = `Contact Form Inquiry from ${formData.name}`;
-    const body = `Name: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0A%0AMessage:%0A${formData.message}`;
+    // Register lead in CRM
+    submitLeadFromWebsite({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      source: "Website Contact Form",
+    });
 
-    // Open email client with pre-filled form data
-    window.location.href = `mailto:info@mohallandholdings.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-    setFormStatus("Opening your email client...");
-    setTimeout(() => setFormStatus(""), 3000);
+    setSubmitted(true);
+    setFormData({ name: "", email: "", phone: "", message: "" });
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
   const contactInfo = [
@@ -164,10 +169,10 @@ const Contact = () => {
                   <Send size={18} />
                   Send Message
                 </button>
-                {formStatus && (
-                  <p className="text-center text-[#062b23] text-sm mt-2">
-                    {formStatus}
-                  </p>
+                {submitted && (
+                  <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-bold flex items-center gap-2">
+                    <CheckCircle2 size={16} /> Thank you! Your inquiry has been submitted. Our consultants will contact you shortly.
+                  </div>
                 )}
               </form>
             </motion.div>

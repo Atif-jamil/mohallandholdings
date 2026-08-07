@@ -184,16 +184,6 @@ const Home = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white"
-        >
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-white rounded-full mt-2" />
-          </div>
-        </motion.div>
       </section>
 
       {/* Features Section */}
