@@ -47,25 +47,25 @@ const Navbar = () => {
             : 'bg-white/95 backdrop-blur-sm'
         }`}
       >
-        <div className="container mx-auto px-2 sm:px-4 md:px-6">
-          <div className="flex items-center justify-between h-20 md:h-24">
-            {/* Logo - Increased size with crisp container so "Mohal Landholdings" text is clearly visible */}
-            <Link to="/" className="relative group flex-shrink-0">
-              <div className="flex items-center gap-3">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo - Vertically centered, fitted neatly within navbar height with crisp readable text */}
+            <Link to="/" className="relative group flex-shrink-0 flex items-center">
+              <div className="flex items-center py-1">
                 <motion.div
-                  whileHover={{ rotate: 3, scale: 1.03 }}
+                  whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="relative"
+                  className="relative flex items-center justify-center bg-white rounded-xl p-1 shadow-sm border border-[#ffe098]/40 overflow-hidden"
                 >
                   <img
                     src={logo}
-                    alt="MOHAL LAND HOLDINGS Logo"
-                    className="h-16 sm:h-20 md:h-24 w-auto object-contain rounded-2xl p-1.5 bg-white shadow-md border border-[#ffe098]/30"
+                    alt="MOHAL LAND HOLDINGS"
+                    className="h-12 sm:h-14 md:h-16 w-auto max-h-16 object-contain object-center scale-105 transform"
                   />
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-[#ffe098] rounded-full animate-pulse"></div>
+                  <div className="absolute top-1 right-1 w-2.5 h-2.5 bg-[#ffe098] rounded-full animate-pulse"></div>
                 </motion.div>
               </div>
-              <div className="absolute -inset-2 bg-[#062b23]/0 rounded-2xl transition-all duration-500 group-hover:bg-[#062b23]/5 -z-10"></div>
+              <div className="absolute -inset-1 bg-[#062b23]/0 rounded-xl transition-all duration-500 group-hover:bg-[#062b23]/5 -z-10"></div>
             </Link>
 
             {/* Desktop Navigation - Shifted slightly left with balanced spacing */}
