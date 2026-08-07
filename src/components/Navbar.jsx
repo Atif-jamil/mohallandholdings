@@ -49,20 +49,15 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-3 sm:px-4 md:px-6">
           <div className="flex items-center justify-between h-20 md:h-24">
-            {/* New Mohal Landholdings Logo - 30% Larger, Vertically Centered & 100% Readable */}
+            {/* New Transparent Mohal Landholdings Logo - 35% Larger, Pure Transparent, No Borders or Background Boxes */}
             <Link to="/" className="relative group flex-shrink-0 flex items-center my-auto">
-              <motion.div
+              <motion.img
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="relative flex items-center justify-center bg-[#062b23] rounded-2xl p-2 shadow-lg border border-[#ffe098]/40 overflow-hidden"
-              >
-                <img
-                  src={logo}
-                  alt="MOHAL LANDHOLDINGS"
-                  className="h-12 sm:h-14 md:h-18 lg:h-20 w-auto max-h-20 object-contain object-center"
-                />
-                <div className="absolute top-1 right-1 w-2.5 h-2.5 bg-[#ffe098] rounded-full animate-pulse"></div>
-              </motion.div>
+                src={logo}
+                alt="MOHAL LANDHOLDINGS"
+                className="h-12 sm:h-14 md:h-16 lg:h-18 w-auto max-h-18 object-contain object-left"
+              />
             </Link>
 
             {/* Desktop Navigation - Balanced Spacing */}

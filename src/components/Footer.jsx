@@ -47,9 +47,7 @@ const Footer = () => {
           {/* Company Info - Render new Mohal Landholdings logo */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-2.5 bg-[#062b23] rounded-2xl border border-[#ffe098]/40 shadow-xl inline-block">
-                <img src={logo} alt="MOHAL LANDHOLDINGS" className="h-14 w-auto object-contain" />
-              </div>
+              <img src={logo} alt="MOHAL LANDHOLDINGS" className="h-14 md:h-16 w-auto object-contain brightness-0 invert" />
             </div>
             <div className="mt-4">
               <p className="text-gray-200 text-sm leading-relaxed font-medium">
